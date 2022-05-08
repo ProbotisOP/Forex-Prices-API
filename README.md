@@ -35,3 +35,8 @@ EX: /currencies/usd-inr
 
 returns US Dollar price in indian rupee
 
+#DEMO 
+
+http://forexprices.herokuapp.com/
+
+
