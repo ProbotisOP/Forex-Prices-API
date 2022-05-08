@@ -31,9 +31,10 @@ Free API for getting UPDATED and LIVE forex rates
 | :-------- | :------- | :------------------------- |
 | `base-qoute` | `string` | **Required**. Base curency and qoute currency
 
-EX: /currencies/usd-inr
+Example : /currencies/usd-inr
 
 returns US Dollar price in indian rupee
+
 
 # DEMO 
 
