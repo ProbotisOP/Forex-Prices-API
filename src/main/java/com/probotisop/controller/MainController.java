@@ -39,6 +39,8 @@ public class MainController {
 			String[] base = code.split("-");
 			System.out.println(base[0]);
 			System.out.println(base[1]);
+			
+			// Yahoo finance has APE coin listed as APE3 , so converting user input 
 			if(base[0].equalsIgnoreCase("ape")) {
 				base[0] = "APE3";
 			}
