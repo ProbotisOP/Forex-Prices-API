@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,6 +32,19 @@ public class MainController {
 		
 		return new ResponseEntity<String>(service.getPrice(base[0], base[1]), HttpStatus.OK);
 	}
+	
+	@GetMapping("/crypto/{code}")
+		public ResponseEntity<String> crypto (@PathVariable String code) throws IOException {
+			
+			String[] base = code.split("-");
+			System.out.println(base[0]);
+			System.out.println(base[1]);
+			if(base[0].equalsIgnoreCase("ape")) {
+				base[0] = "APE3";
+			}
+			return new ResponseEntity<String>(service.getCryptoPrice(base[0], base[1]), HttpStatus.OK);
+		}
+	
 	
 	@GetMapping("/")
 	public String home() {
