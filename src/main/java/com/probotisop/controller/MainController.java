@@ -21,20 +21,20 @@ public class MainController {
 	ForexService service;
 	
 	@GetMapping("/currencies/{code}")
-	public ResponseEntity<String> getRate(@PathVariable String code) throws IOException  , org.jsoup.HttpStatusException{
+	public ResponseEntity<Object> getRate(@PathVariable String code) throws IOException  , org.jsoup.HttpStatusException{
 		String[] base = code.split("-");
 		System.out.println(base[0]);
 		System.out.println(base[1]);
 		
 		if(base[0].length()>=4 || base[1].length()>=4) {
-			return new ResponseEntity<String>("Please enter currency code corectly", HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<Object>("Please enter currency code corectly", HttpStatus.BAD_REQUEST);
 		}
 		
-		return new ResponseEntity<String>(service.getPrice(base[0], base[1]), HttpStatus.OK);
+		return new ResponseEntity<Object>(service.getPrice(base[0], base[1]),HttpStatus.OK);
 	}
 	
 	@GetMapping("/crypto/{code}")
-		public ResponseEntity<String> crypto (@PathVariable String code) throws IOException {
+		public ResponseEntity<Object> crypto (@PathVariable String code) throws IOException {
 			
 			String[] base = code.split("-");
 			System.out.println(base[0]);
@@ -42,7 +42,7 @@ public class MainController {
 			if(base[0].equalsIgnoreCase("ape")) {
 				base[0] = "APE3";
 			}
-			return new ResponseEntity<String>(service.getCryptoPrice(base[0], base[1]), HttpStatus.OK);
+			return new ResponseEntity<Object>(service.getCryptoPrice(base[0], base[1]), HttpStatus.OK);
 		}
 	
 	
