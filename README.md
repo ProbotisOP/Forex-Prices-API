@@ -36,6 +36,22 @@ Example : /currencies/usd-inr
 returns US Dollar price in indian rupee
 
 
+#### Get Crypto Rate 
+
+```http
+  GET /crypto/base-qoute
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `base-qoute` | `string` | **Required**.  crypto and qoute currency
+
+Example : /crypto/btc-inr
+
+returns price of bitcoin in indian rupee
+
+
+
 # DEMO 
 
 http://forexprices.herokuapp.com/
