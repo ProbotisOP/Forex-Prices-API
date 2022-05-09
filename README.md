@@ -21,7 +21,7 @@ Free API for getting UPDATED and LIVE forex rates
 
 ## API Reference
 
-#### Get Price Rate 
+#### 1. Get Price Rate 
 
 ```http
   GET /currencies/base-qoute
@@ -36,7 +36,7 @@ Example : /currencies/usd-inr
 returns US Dollar price in indian rupee
 
 
-#### Get Crypto Rate 
+#### 2. Get Crypto Rate 
 
 ```http
   GET /crypto/base-qoute
