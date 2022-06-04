@@ -29,7 +29,7 @@ public class MainController {
 		if(base[0].length()>=4 || base[1].length()>=4) {
 			return new ResponseEntity<Object>("Please enter currency code corectly", HttpStatus.BAD_REQUEST);
 		}
-		
+		// String pass = "hahalol";
 		return new ResponseEntity<Object>(service.getPrice(base[0], base[1]),HttpStatus.OK);
 	}
 	
