@@ -27,7 +27,7 @@ public class ForexService {
 		
 	}
 
-	public ResponseEntity<Coin> getPrice(String base, String qoute) throws IOException {
+	public ResponseEntity<Object> getPrice(String base, String qoute) throws IOException {
 		String url = "https://in.investing.com/currencies/" + base + "-" + qoute;
 		
 		
@@ -46,12 +46,12 @@ public class ForexService {
 				System.out.println(price[0]);
 				
 				LocalTime time = LocalTime.now();
-				Coin coin = new Coin(time, base.toUpperCase(), qoute.toUpperCase(), price[0]);
+				Coin coin = new Coin(time, qoute.toUpperCase(),  base.toUpperCase(), price[0]);
 
-				return new ResponseEntity<Coin>(coin, HttpStatus.OK);
+				return new ResponseEntity<Object>(coin, HttpStatus.OK);
 			} catch (Exception e) {
 				// return "Please check you currency input ";
-				return new ResponseEntity<Coin>(HttpStatus.BAD_REQUEST);
+				return new ResponseEntity<Object>("Please check you currency input",HttpStatus.BAD_REQUEST);
 			}
 
 		}
@@ -78,7 +78,7 @@ public class ForexService {
 		}
 		
 		LocalTime time = LocalTime.now();
-		Coin coin = new Coin(time, base.toUpperCase(), qoute.toUpperCase(), elements);
+		Coin coin = new Coin(time,  qoute.toUpperCase(),base.toUpperCase(), elements);
 		System.out.println(elements);
 
 		return new ResponseEntity<Object>(coin, HttpStatus.OK);

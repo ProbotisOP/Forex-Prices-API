@@ -4,7 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Documentation </title>
+
+
 </head>
 <body>
 
@@ -16,39 +18,46 @@
 		                                                    Free exchange rate API build by @ProbotisOP
 		
 	
-		ENDPOINTS: 
+	<h3>	ENDPOINTS:  </h3>
 		
-		1. FOREX CURRENCIES 
 		
-		 GET -> /currencies/base-qoute
-		
-							* base -> whose rate you want
-							* qoute -> in which currency correspondence you want 
-							
-							
-		EXAMPLE : /currencies/usd-inr : return USD price in indian rupee
-		          /currencies/usd-jpy : return USD price in Japanese Yen 
-		          
-		 
-		 
-		 2. CRYPTOCURRENCIES 
+		<b> 1. CRYPTOCURRENCIES </b>
 		 
 		   
-		   GET -> /crypto/base-qoute
+		   GET -> /crypto?target=ape&base=usd
 		   
-		   					* base - > CRYPTO coin 
-		   					* qoute -> Native currency 
+		   					* target - > CRYPTO coin 
+		   					* base -> Native currency 
 		   					
 		   	
-		   Example : /crypto/btc-usd  : redturns the price of bitcoin in us dollor
+		   Example : /crypto?target=ape&base=usd  : returns the price of bitcoin in us dollor
 		   
 		   
 		   <b>NOTE: try to use qoute as USD only , becouse few of other currencies are not supported</b>
+		   
+		   
 
-		       
+		   
+		   
+		<b>2. FOREX CURRENCIES </b> 
+		
+		 GET -> /currencies?target=usd&base=inr
+		
+							* target -> whose rate you want
+							* base -> in which currency correspondence you want 
+							
+							
+		EXAMPLE : /currencies?target=usd&base=inr : return USD price in indian rupee
+		          /currencies?target=usd&base=jpy : return USD price in Japanese Yen 
+		          
+		          
+		        
+		
+							follow me :		<a href="https://github.com/ProbotisOP" target="blank">GithuB</a>
 									
 							  		
 </pre>
+</div>
 
 </body>
 </html>

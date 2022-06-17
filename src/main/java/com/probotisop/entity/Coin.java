@@ -7,7 +7,7 @@ import java.time.LocalTime;
 public class Coin {
 
 	LocalTime time;
-	private String Symbol;
+	private String base;
 	private String target;
 	private String Price;
 
@@ -28,11 +28,11 @@ public class Coin {
 	}
 
 	public String getSymbol() {
-		return Symbol;
+		return base;
 	}
 
 	public void setSymbol(String symbol) {
-		Symbol = symbol;
+		base = symbol;
 	}
 
 	public String getTarget() {
@@ -46,7 +46,7 @@ public class Coin {
 	public Coin(LocalTime time, String symbol, String target, String price) {
 		super();
 		this.time = time;
-		Symbol = symbol;
+		base = symbol;
 		this.target = target;
 		Price = price;
 	}
