@@ -24,14 +24,14 @@ Free API for getting UPDATED and LIVE forex rates
 #### 1. Get Price Rate 
 
 ```http
-  GET /currencies/base-qoute
+  GET /currencies?target=usd&base=inr
 ```
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `base-qoute` | `string` | **Required**. Base curency and qoute currency
+| `target-base` | `string` | **Required**. Base curency and qoute currency
 
-Example : /currencies/usd-inr
+Example : /currencies?target=usd&base=inr
 
 returns US Dollar price in indian rupee
 
@@ -39,14 +39,14 @@ returns US Dollar price in indian rupee
 #### 2. Get Crypto Rate 
 
 ```http
-  GET /crypto/base-qoute
+  GET /crypto?target=ape&base=usd
 ```
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `base-qoute` | `string` | **Required**.  crypto and qoute currency
+| `target-base` | `string` | **Required**.  crypto and base currency
 
-Example : /crypto/btc-inr
+Example : /crypto?target=btc&base=inr
 
 returns price of bitcoin in indian rupee
 
